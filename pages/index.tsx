@@ -14,8 +14,15 @@ export default function Home() {
 
   return (
   <Container>
+
+    <Head>
+      <title>Perfect Meow</title>
+      <meta name="description" content="site built for interview demo"></meta>
+      <meta name="theme-color" content="black"></meta>
+      <link rel="manifest" href="/manifest.json" />
+    </Head>
     {data.map((user) => 
-      <Row>
+      <Row key={user.id}>
         <Link href="/user/[id]" as={`/user/${user.id}`}>
           {`Cat ${user.id}`}
         </Link>
