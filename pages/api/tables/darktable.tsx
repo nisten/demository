@@ -1,17 +1,44 @@
+import { userAgent } from 'next/server';
+import { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table'
 
 function DarkTable() {
+
+const [data, setData] = useState(null)
+const [crew, setCrew] = useState(0)
+const [isLoading, setLoading] = useState(false)
+
+
+useEffect(() => {
+    setLoading(true)
+    fetch('https://api.spacexdata.com/v4/crew')
+    .then(res => res.json())
+    .then(data => {
+        setData(data)
+        setLoading(false)
+    })
+    }, []  
+)
+
   return (
-    <Table striped bordered hover variant="dark" responsive-md>
+    <Table striped bordered hover variant="dark" responsive>
       <thead className="table-bordered border-light hover">
         <tr>
           <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Astronaut Name</th>
+          <th>Agency</th>
+          <th>Status</th>
         </tr>
       </thead>
       <tbody>
+        {data.map( (user) =>
+            <tr>
+            <td></td>
+            <td>{user.name}</td>
+            <td>{user.status}</td>
+            <td>{user.agency}</td>
+          </tr>
+        )}
         <tr>
           <td>1</td>
           <td>Luna</td>
