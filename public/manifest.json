@@ -34,9 +34,10 @@
         "sizes": "152x152"
       },
       {
-        "src": "/favicon.ico",
+        "src": "/raco.png",
         "type": "image/png",
-        "sizes": "192x192"
+        "sizes": "192x192",
+        "purpose": "maskable"
       },
       {
         "src": "/favicon.ico",
@@ -44,9 +45,10 @@
         "sizes": "384x384"
       },
       {
-        "src": "/favicon.ico",
+        "src": "/raco.png",
         "type": "image/png",
-        "sizes": "512x512"
+        "sizes": "512x512",
+        "purpose": "maskable"
       }
     ]
   }
