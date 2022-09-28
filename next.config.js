@@ -1,6 +1,3 @@
-const withOffline = require("next-offline");
-
-
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
@@ -9,4 +6,4 @@ const nextConfig = {
   }, 
 }
 
-module.exports = withOffline(nextConfig);
+module.exports= nextConfig;
